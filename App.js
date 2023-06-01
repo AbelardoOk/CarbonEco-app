@@ -1,52 +1,26 @@
 import { StatusBar } from 'expo-status-bar';
 import { Text, View } from 'react-native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
+
+import menu from "./src/pages/menu";
+import atividades from "./src/pages/atividades";
+
+
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
 
-    <View className="bg-[#102601] h-full">
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName='menu'>
 
-    <View className="flex items-center">
+        <Stack.Screen name="menu" component={menu} />
+        <Stack.Screen name="atividades" component={atividades} />
 
-      {/* Texto boas vindas */}
-      <Text className="text-5xl font-alice font-regular w-[278px] text-center text-[#B3BF56] pt-24">Olá, como você está?</Text>
-      
-      <View className="pt-[72px] text-center w-[301px] h-[138px] bg-[#365902]">
-      {/* Pontos ganhos */}
+      </Stack.Navigator>
 
-        <Text className="text-[#f7f7f7] text-4xl text-center ">Pontos ganhos</Text>
-
-        <View className="mt-[14px] rounded-[20px] bg-[#365902] w-[301px] h-[83px] flex flex-row items-center justify-around " >
-  
-          <View className="">
-            <Text className="text-2xl text-[#f7f7f7]">Hoje</Text>
-            <Text className="text-2xl text-[#B3BF56]">5.34</Text>
-          </View>
-
-          <View>
-            <Text className="text-2xl text-[#f7f7f7]">Totais</Text>
-            <Text className="text-2xl text-[#B3BF56]">5.34</Text>
-          </View>
-          
-        </View>
-
-
-        <View className="bg-[#8AA626 mt-[90px] w-full h-[254px]">
-
-          <View className="bg-[#B3BF56] ">
-
-          </View>
-
-        </View>
-
-      </View>
-
-
-    </View>
-
-
-
-    </View>
+    </NavigationContainer>
 
   );
 }
