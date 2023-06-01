@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        alice: ['/assets/fonts/Alice.ttf']
+        alice: ["*/assets/fonts/Alice.ttf"]
       }
     },
   },
