@@ -4,7 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 const Stack = createStackNavigator();
 
-export default function App() {
+export default function Menu() {
   return (
 
     <View className="bg-[#102601] h-full">
